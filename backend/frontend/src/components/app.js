@@ -2,6 +2,9 @@ import React ,{ Component } from "react";
 import { render } from "react-dom";
 import HomePage from './homePage';
 import Regist from "./regist";
+import ReactDOM from 'react-dom';
+
+
 
 export default class App extends Component {
     constructor(props) {
