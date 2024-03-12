@@ -126,7 +126,7 @@ export default class Login extends Component {
                 <Button color="primary" variant="contained" onClick={this.sendinfouser}>new</Button>
             </Grid>
             <Grid item xs={12} align="center">
-                <Button color="primary" variant="contained" to="/" /*component={ Link }*/>back</Button>
+                <Button color="primary" variant="contained" to="/" component={ Link }>back</Button>
             </Grid>
         </Grid>);
     }

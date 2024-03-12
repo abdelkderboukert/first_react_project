@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import HomePage from './homePage';
 import Regist from "./regist";
 import ReactDOM from 'react-dom';
+import Login from "./login";
 
 
 
@@ -14,11 +15,10 @@ export default class App extends Component {
     render() {
         return (<div>
             <HomePage></HomePage>
-            <p>fhnfhnf</p>
         </div>
         );
     }
 }
 
 const appDiv = document.getElementById("app");
-createRoot(appDiv).render(<App />, appDiv)
+render(<App />, appDiv);

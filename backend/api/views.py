@@ -5,6 +5,7 @@ from .models import *
 from .serializers import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.db.models import Q
 
 # Create your views here.
 class personview(generics.ListCreateAPIView):
@@ -23,7 +24,7 @@ class createpersonview(APIView):
             name = serializer.data.get('name')
             prename = serializer.data.get('prename')
             age = serializer.data.get('age')
-            queryset = person.objects.filter(name=name)
+            queryset = person.objects.filter(Q(name=name) & Q(prename=prename) ).all()#& Q(age=age)
             if queryset.exists():
                 personn = queryset[0]
                 personn.name = name
