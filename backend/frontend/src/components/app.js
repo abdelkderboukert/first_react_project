@@ -1,21 +1,21 @@
 import React ,{ Component } from "react";
 import { render } from "react-dom";
-import homePage from './homePage'
-import login from './login'
-import regist from "./regist";
+import HomePage from './homePage';
+import Regist from "./regist";
 
-export default class app extends Component {
+export default class App extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (<div>
-        <homePage></homePage>
+            <HomePage></HomePage>
+            <p>fhnfhnf</p>
         </div>
         );
     }
 }
 
 const appDiv = document.getElementById("app");
-render(<app />, appDiv)
+createRoot(appDiv).render(<App />, appDiv)

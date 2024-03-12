@@ -12,13 +12,13 @@ class personview(generics.ListCreateAPIView):
     serializer_class = personSerializer
 
 class createpersonview(APIView):
-    serializers_class = createpersonSerializer
+    serializer_class = createpersonSerializer
 
     def post(self, request, format=None):
         if not self.request.session.exists(self.request.session.session_key):
             self.request.session.create()
 
-        serializer = self.serializers_class(data=request.data)
+        serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             name = serializer.data.get('name')
             prename = serializer.data.get('prename')

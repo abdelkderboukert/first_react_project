@@ -33,3 +33,48 @@ module.exports = {
     }),
   ],
 };
+
+_______________________________________________________________________________________________
+                       "blion"
+
+
+            <Grid item xs={12} align="center">
+                <FormControl component="fieldse">
+                    <FormHelperText>
+                        <div align="center">
+                            choos yourself
+                        </div>
+                    </FormHelperText>
+                    <RadioGroup row defaultValue="true" /*onChange={this.handleguestcanpausechange}*/>
+                        <FormControlLabel control={<Radio color="primary" />}
+                                          label="Play/Pause"
+                                          labelPlacement="bottom"
+                                          value="true"
+                        ></FormControlLabel>
+                        <FormControlLabel control={<Radio color="secondary" />}
+                                          label="No control"
+                                          labelPlacement="bottom"
+                                          value="false"
+                        ></FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+_______________________________________________________________________________________________
+    /*handlevoteschange(e) {
+        this.setState({
+            fname: e.target.value,
+        });
+    }
+
+    handleguestcanpausechange(e) {
+        this.setState({
+            guestCanPause: e.target.value === 'true' ? true : false,
+        })
+    };*/
+    _______________________________________________________________________________________________
+                    <Switch>
+                    <Route exact path="/" component={() => <p>Welcome!</p>} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/regist" component={Regist} />
+                    <Route component={() => <p>Page not found</p>} />
+                </Switch>
