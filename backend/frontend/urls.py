@@ -3,8 +3,8 @@ from .views import *
 
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', index),
     path('login', index),
     path('regist', index),
-    path('home/<str:nm>', index),
+    path('home/<int:nmcode>', index),
 ]

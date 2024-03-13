@@ -2,24 +2,38 @@ import React, { Component } from "react";
 import Regist from "./regist";
 import Login from "./login";
 import Home from "./home";
-import { BrowserRouter as Router, Route, Link, Navigate, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+import  { Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-export default class HomePagr extends Component {
+export default class HomePage extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    return(
+    return(<div>
+      <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} /> 
+        <Route path="/login" element={<Login />} />
+        <Route path="/regist" element={<Regist />} />
+        <Route path='/home/:nmcode' element={<Home />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
+      </Routes>
+    </Router>
+    <h1>home</h1>
+    </div>
+    );
+  };     /* 
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/regist" element={<Regist />} />
-          <Route path="/home/:nm" element={<Home />} />
+          <Route path='/home/:nmcode' element={<Home />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
-      </Router>
-    );
-  };
+      </Router>*/
 }
