@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import motion from "framer-motion";
+import { motion } from "framer-motion";
 
 export default class Home extends Component {
   constructor(props) {
