@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-/*import { motion } from "framer-motion";*/
+import motion from "framer-motion";
 
 export default class Home extends Component {
   constructor(props) {
@@ -25,19 +25,19 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>{this.nmcode}</h1>
-        <p>name:{this.state.name}</p><br/>
-        <p>prename:{this.state.prename}</p><br/>
-        <p>age:{this.state.age}</p><br/>
-        <motion.div 
-        /*whileHover={{
+        <h1>{this.nmcode}</h1>npm install react-dom@^18.0.0
+        <p>name:{this.state.name}</p><br />
+        <p>prename:{this.state.prename}</p><br />
+        <p>age:{this.state.age}</p><br />
+        <motion.div
+          whileHover={{
             scale: 1.2,
             rotate: 90,
-        }}
-        /*className="bg-neutral-50
+          }}
+          className="bg-neutral-50
         h-24 w-24
         rounded-3xl
-        cursor-pointer"*/>
+        cursor-pointer">
         </motion.div>
       </div>
     );
