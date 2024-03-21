@@ -7,4 +7,5 @@ urlpatterns = [
     path('login', index),
     path('regist', index),
     path('home/<int:nmcode>', index),
+    path('logout', index),
 ]
