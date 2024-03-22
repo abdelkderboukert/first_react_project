@@ -5,20 +5,15 @@ import Regist from "./regist";
 import ReactDOM from 'react-dom/client';
 import Login from "./login";
 
-
-
-export default class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (<div>
-            <HomePage></HomePage>
+export default function App() {
+    return (
+        <div>
+            <HomePage />
         </div>
-        );
-    }
-}
+    )
+};
+
+
 
 const appDiv = document.getElementById("app");
 /*render(<App />, appDiv);*/
