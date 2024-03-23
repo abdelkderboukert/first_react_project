@@ -15,7 +15,7 @@ export default function App() {
 
 
 
-const appDiv = document.getElementById("app");
-/*render(<App />, appDiv);*/
-const root = ReactDOM.createRoot(appDiv);
-root.render(<App />);
+// const appDiv = document.getElementById("app");
+// /*render(<App />, appDiv);*/
+// const root = ReactDOM.createRoot(appDiv);
+// root.render(<App />);
