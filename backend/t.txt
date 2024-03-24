@@ -78,3 +78,40 @@ ________________________________________________________________________________
                     <Route path="/regist" component={Regist} />
                     <Route component={() => <p>Page not found</p>} />
                 </Switch>
+
+################################################################################
+################################################################################
+// const EventExamples = () => {
+//     const addBook = (e) => {
+//         console.log(e);
+//         alert("form submited")
+//     };
+//     const changeValeu = (e) => {
+//         console.log(e.target.value);
+//     };
+//     const SubmitForm = (e) => {
+//         e.preventDefault();
+//         console.log("form submited");
+//     };
+//     return (
+//         <>
+//             <form onSubmit={SubmitForm}>
+//                 <input type="text"
+//                     name="example"
+//                     id=""
+//                     onChange={changeValeu}
+//                 />
+//                 <h1 id="tada"></h1>
+//                 <button type="submit" onClick={addBook}>submit</button>
+//                 {/* <button type="button" onClick={addBook}>click me</button>*/}
+//                 {/* <button type="button" onClick={() => { console.log("hi"); }}>click me</button> */}
+//             </form>
+//         </>
+//     );
+// };
+###########################################################################################################
+############################################################################################################
+    const getDate = (id) => {
+        const date = dates.find((date) => date.index === id)
+        console.log(date);
+    } t7ws 3la 7ja dkhl la list ta3 json
