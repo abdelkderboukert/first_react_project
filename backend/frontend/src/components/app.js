@@ -1,21 +1,32 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import HomePage from './homePage';
-import Regist from "./regist";
-import ReactDOM from 'react-dom/client';
-import Login from "./login";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "../../static/css/index.css";
+import { dates } from "./dates"
+import Book from "./date"
+import Homepage from "./homePage"
+import image from "../../static/images/image1.jpg"
+//import { BrowserRouter } from 'react-router-dom';
 
-export default function App() {
+
+
+
+function BookList(props) {
+    console.log(props)
+    let i = 0;
     return (
-        <div>
-            <HomePage />
-        </div>
-    )
-};
+        <section className='hh'>
+            {dates.map((date) => {
+                i = i + 1;
+                return <Book  {...date} key={date.index} i={i} />;
+            })}
+            <img src={image} alt="" />
+            <Homepage />
+        </section>
+    );
+}
 
 
 
-// const appDiv = document.getElementById("app");
-// /*render(<App />, appDiv);*/
-// const root = ReactDOM.createRoot(appDiv);
-// root.render(<App />);
+const app = ReactDOM.createRoot(document.getElementById("app"));
+app.render(<BookList />);
+
