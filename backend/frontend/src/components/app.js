@@ -10,23 +10,12 @@ import image from "../../static/images/image1.jpg"
 
 
 
-function BookList(props) {
-    console.log(props)
-    let i = 0;
-    return (
-        <section className='hh'>
-            {dates.map((date) => {
-                i = i + 1;
-                return <Book  {...date} key={date.index} i={i} />;
-            })}
-            <img src={image} alt="" />
-            <Homepage />
-        </section>
-    );
+function App(props) {
+    return <Homepage />;
 }
 
 
 
 const app = ReactDOM.createRoot(document.getElementById("app"));
-app.render(<BookList />);
+app.render(<App />);
 

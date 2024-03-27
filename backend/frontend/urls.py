@@ -8,4 +8,5 @@ urlpatterns = [
     path('regist', index),
     path('home/<int:nmcode>', index),
     path('logout', index),
+    path('todo', index),
 ]

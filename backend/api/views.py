@@ -5,6 +5,7 @@ from .models import *
 from .serializers import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.http import JsonResponse
 from django.db.models import Q
 
 # Create your views here.
@@ -36,3 +37,34 @@ class createpersonview(APIView):
                 personn.save()
             
             return Response(personSerializer(personn).data, status=status.HTTP_201_CREATED)
+
+class TodoListview(APIView):
+    def get(self, request, format=None):
+        todo = Todo.objects.all()
+        serializer = TodoSerializer(todo, many=True)
+        return Response(serializer.data)
+    
+
+class creatTodolistview(APIView):
+    serializer_class = createTodoSerializer
+
+    def post(self, request, format=None):
+        if not self.request.session.exists(self.request.session.session_key):
+            self.request.session.create()
+
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            title = serializer.data.get('title')
+            description = serializer.data.get('description')
+            queryset = Todo.objects.filter(Q(title=title) & Q(description=description) ).all()#& Q(age=age)
+            if queryset.exists():
+                todon = queryset[0]
+                todon.title = title
+                todon.description = description
+                todon.save(update_fields=['title', 'description'])
+            else:
+                todon = Todo(title=title, description=description)
+                todon.save()
+            return JsonResponse({'status': 'success'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
