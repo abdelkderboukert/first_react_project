@@ -1,48 +1,53 @@
 
 import React, { Component } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import "../../static/css/style.css";
+import { dates } from "./dates";
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "abdelkader",
-      prename: "boukert",
-      age: "20",
-      nmcode: null,
-    };
+const Home = () => {
+  let [count, setCount] = useState(0)
+  let countbtn = () => {
+    setCount(count + 1);
   }
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div className="container px-4 px-lg-5">
+          <a className="navbar-brand" href="#page-top">ALGERIA ON</a>
+          <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            Menu
+            <i className="fas fa-bars"></i>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+              <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
+              <li className="nav-item"><a className="nav-link" href="#signup">Contact</a></li>
+              <li className="nav-item"><a className="nav-link" href="">update profile</a></li>
+              <li className="nav-item"><a className="nav-link" id="logo" href="">logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <header className="masthead">
+        <div className="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+          <div className="d-flex justify-content-center">
+            <div className="text-center">
+              <h1 className="mx-auto my-0 text-uppercase">ALG ON</h1>
+              <h2 className="text-white-50 mx-auto mt-2 mb-5">The site will offer a user-friendly interface where
+                candidates will be able to download
+                their cv.</h2>
+            </div>
 
-  componentDidMount() {
-    if (this.props.match && this.props.match.params) {
-      this.setState({ nmcode: this.props.match.params.nmcode });
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.nmcode !== prevProps.match.params.nmcode) {
-      this.setState({ nmcode: this.props.match.params.nmcode });
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>{this.state.nmcode}</h1>
-        <p>name:{this.state.name}</p><br />
-        <p>prename:{this.state.prename}</p><br />
-        <p>age:{this.state.age}</p><br />
-        <motion.div
-          whileHover={{
-            scale: 1.2,
-            rotate: 90,
-          }}
-          className="bg-neutral-50
-          h-24 w-24
-          rounded-3xl
-          cursor-pointer">
-        </motion.div>
-      </div>
-    );
-  }
+          </div>
+        </div>
+      </header>
+      <h1>{count}</h1>
+      <button onClick={countbtn} type="button" className='btn'>add +1</button>
+    </>
+  );
 }
+
+export default Home;

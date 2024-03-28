@@ -6,7 +6,7 @@ urlpatterns = [
     path('', index),
     path('login', index),
     path('regist', index),
-    path('home/<int:nmcode>', index),
+    path('home', index),
     path('logout', index),
     path('todo', index),
 ]

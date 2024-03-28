@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from rest_framework import generics, status
 from .models import *
@@ -68,3 +68,13 @@ class creatTodolistview(APIView):
             return JsonResponse({'status': 'success'})
         else:
             return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+        
+
+class TodoDeleteView(APIView):
+    def delete(self, request, format=None, id=None):
+        try:
+            todo = Todo.objects.get(id=id)
+            todo.delete()
+            return Response({'message': 'Todo item deleted successfully.'})
+        except Todo.DoesNotExist:
+            return Response({'message': 'Todo item not found.'})

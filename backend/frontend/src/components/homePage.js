@@ -16,7 +16,7 @@ export default function HomePage() {
         <Route exact path="/" element={<BookL />} />
         <Route path="/login" element={<Login />} />
         <Route path="/regist" element={<Regist />} />
-        <Route path="/home/:nmcode" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/todo" element={<TodoList />} />
         <Route path="*" element={<h1>hh</h1>} />
       </Routes>
