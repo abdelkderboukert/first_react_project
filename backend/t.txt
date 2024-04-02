@@ -111,12 +111,34 @@ ________________________________________________________________________________
 // };
 ###########################################################################################################
 ############################################################################################################
+    '''
+    js
     const getDate = (id) => {
         const date = dates.find((date) => date.index === id)
         console.log(date);
     } t7ws 3la 7ja dkhl la list ta3 json
+    '''
     ################################################################################################################
     ################################################################################################################
-    // function Login() {
-//     return React.createElement('h2', {}, 'hello world');
-// }
+function Login() {
+     return React.createElement('h2', {}, 'hello world');
+ }
+ #########################################################################
+ "########################################################################
+<RemoveScroll enabled={false}></RemoveScroll>remove the scroll
+
+  let [count, setCount] = useState(0)
+  let countbtn = () => {
+    setCount(count + 1);
+  }
+
+  #####################################################################
+  nkhbi skrol bar
+  .hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Webkit (Chrome, Safari, Opera) version */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
