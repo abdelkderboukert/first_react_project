@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "../../static/css/style.css";
 import axios from 'axios';
+import Regist from "./regist";
 
 const url = 'https://api.github.com/users';
 
@@ -44,15 +45,14 @@ const Home = () => {
   const change = () => {
     setValue(!value)
   }
-
-  const handleClick = () => {
-    <Route path="/regist" element={<Regist />} />
-  };
   return (
     <>
       <h1>N= {num}</h1>
-      {value ? <button type="button" className="btn" style={{ backgroundColor: 'pink' }} onClick={change}>stare</button> : <><button type="button" className="btn" onClick={buttonAffectclick}>add 1 to N</button>
-        <button type="button" className="btn" style={{ backgroundColor: 'red' }} onClick={change}>stope</button></>}
+      {value ? <button type="button" className="btn" style={{ backgroundColor: 'green' }} onClick={change}>stare</button> : <><button type="button" className="btn" onClick={buttonAffectclick}>add 1 to N</button>
+        <button type="button" className="btn" style={{
+          backgroundColor: 'red',
+          margin: '10px'
+        }} onClick={change}>stope</button></>}
       {/* <ul>
         {users.map((user) => {
           console.log(user);
@@ -67,10 +67,11 @@ const Home = () => {
             <h3>{todo.title}</h3>
             <h3>{todo.id}</h3>
             <p>{todo.description}</p>
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+            <button className="btn" onClick={() => deleteTodo(todo.id)}>Delete</button>
           </div>;
         })}
       </ul>
+      <Regist />
     </>);
 }
 

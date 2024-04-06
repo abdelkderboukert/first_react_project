@@ -9,4 +9,5 @@ urlpatterns = [
     path('home', index),
     path('logout', index),
     path('todo', index),
+    path('test', index),
 ]

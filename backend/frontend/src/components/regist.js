@@ -4,7 +4,6 @@ import axios from 'axios';
 const Regist = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.post('/api/createtodo/', {
@@ -22,16 +21,16 @@ const Regist = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form className='form' onSubmit={handleSubmit}>
+            <div className='form-row' ><label className='form-label'>
                 title:
-                <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
+                <input className='form-input' type="text" value={title} onChange={e => setTitle(e.target.value)} />
             </label>
-            <label>
-                description:
-                <input type="text" value={description} onChange={e => setDescription(e.target.value)} />
-            </label>
-            <button type="submit">Submit</button>
+                <label className='form-label'>
+                    description:
+                    <input className='form-input' type="text" value={description} onChange={e => setDescription(e.target.value)} />
+                </label>
+                <button type="submit" className='btn btn-block'>Submit</button></div>
         </form>
     );
 }
